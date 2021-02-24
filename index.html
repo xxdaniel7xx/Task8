@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link><script defer src="script.js"></script>
+</head>
+<body>
+<header>
+    <h1>Модуль 8 задачи</h1>
+</header>
+<main>
+    <div class="task">
+        <h2>Задача 1</h2>
+        <p>Напишите программу, которая работала бы следующим образом: в prompt вводится значение. С помощью унарного плюса (арифметический оператор) необходимо преобразовать его в число, затем проверить с помощью typeof, принадлежит ли оно к множеству Number.</p>
+        <ul>
+            <li>Если это число, то вывести в консоль чётное оно или нечётное.</li>
+            <li>Если передано не число, выведите: «Упс, кажется, вы ошиблись».</li>
+            <li>*NaN, хоть и относится к типу Number, числом не является. Добавьте отдельную проверку для этого значения.</li>
+        </ul>
+
+        <button onclick="input_number()">Решение</button>
+    </div>
+    <div class="task">
+        <h2>Задача 2</h2>
+        <p>Дана переменная Х, которая может принимать любое значение. Написать программу, которая в зависимости от типа данных Х выводит в консоль сообщение вида: «X — число».</p>
+        <p>Опишите три случая: когда х = числу, строке или логическому типу. В других случаях выводите сообщение: «Тип x не определён».</p>
+        <button onclick="type_of_X()">Решение</button>
+    </div>
+    <div class="task">
+        <h2>Задача 3</h2>
+        <p>Дана строка. Необходимо вывести в консоль перевёрнутый вариант. Например, "Hello" -> "olleH".</p>
+        <form>
+            <fieldset>
+                <label for="text_field">Введите строку:<input id="text_field" name="string" type="text"></label>
+                <button type="button" onclick="str_reverse()">REVERSE</button>
+                <span id="text_result"> </span>
+            </fieldset>
+
+        </form>
+    </div>
+    <div class="task">
+        <h2>Задача 4</h2>
+        <p>Записать в переменную случайное целое число в диапазоне [0; 100]. Используйте объект Math.</p>
+
+        <button type="button" onclick="random_num()">Рандом!</button>
+        <p>Число:<span id="random_number"></span></p>
+
+    </div>
+    <div class="task">
+        <h2>Задача 5 и 6</h2>
+        <p>Дан произвольный массив. Необходимо вывести количество элементов массива, затем перебрать его и вывести в консоль каждый элемент массива.</p>
+        <p>Дан массив. Проверить, одинаковые ли элементы в массиве и вывести результат true или false в консоль. Речь идёт не о двух рядом стоящих одинаковых элементах, а обо всех. Проверить, все ли элементы в массиве одинаковые.</p>
+        <form>
+            <fieldset>
+                <label for="array_len">Введите длину массива:<input id="array_len" type="number"></label>
+                <button type="button" onclick="random_num_array()">МАССИВ</button>
+            </fieldset>
+            <p>Длина массива:<span id="array_len_result"></span></p>
+            <p>Массив:<span id="array_result"></span></p>
+            <p>Элементы массива равны:<span id="simile_result"></span></p>
+        </form>
+    </div>
+    <div class="task">
+        <h2>Задача 7</h2>
+        <p>Дан массив. Нужно вывести в консоль количество чётных и нечётных элементов в массиве. Если в массиве есть нулевой элемент, то он учитывается и выводится отдельно.</p>
+        <p>При выполнении задания необходимо учесть, что массив может содержать не только числа, но и, например, знаки, null и так далее.</p>
+
+        <form>
+            <fieldset>
+                <p>Вводите элементы массива по одному. Затем нажимайте "Добавить элемент"</p>
+                <label for="array_len">Введите элемент массива:<input id="array_input"></label>
+                <button type="button" onclick="add_element()">Добавить элемент</button>
+                <button type="button" onclick="null_element()">Добавить null</button>
+                <button type="button" onclick="even_odd_arr()">Посчитать</button>
+                <button type="button" onclick="delete_arr()">Стереть массив</button>
+            </fieldset>
+            <p>Длина массива:<span id="array_input_len"></span></p>
+            <p>Массив:<span id="array_input_result"></span></p>
+            <p>Четных элементов массива:<span id="even_result"></span></p>
+            <p>Нечетных элементов массива:<span id="odd_result"></span></p>
+            <p>Null элементов массива:<span id="null_result"></span></p>
+        </form>
+    </div>
+
+</main>
+</body>
+</html>

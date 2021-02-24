@@ -55,7 +55,7 @@ function random_num() {
     randomResult.innerHTML = " "+random;
 }
 
-//Task 5 and 6
+//Task 5 and 6 (and 9)
 
 function random_num_array() {
     //Да, я просто скопировал предыдущий код. Это наверняка не правильно. Однако на мой взгляд пара лишних строк кода не такая большая жертва вместо дополнительной функции.
@@ -95,6 +95,9 @@ function random_num_array() {
     } else {
         simileRes.innerHTML = " НЕТ";
     }
+
+    document.getElementById("array_len").value = "";
+
 }
 
 //Task 7
@@ -112,8 +115,10 @@ function add_element() {
     } else {
         arrEveOdd.push(arrayInput)
     }
-    return arrEveOdd;
 
+    document.getElementById('array_input').value = "";
+
+    return arrEveOdd;
 }
 
 function null_element() {
@@ -158,4 +163,104 @@ function even_odd_arr() {
 function delete_arr(){
     arrEveOdd.length = 0;
     return arrEveOdd;
+}
+
+//Task 8
+
+let arrKeyValue = new Map();
+
+function add_pair() {
+
+    let keyInput = document.getElementById("key_input").value;
+    let valueInput = document.getElementById("key_input").value;
+
+
+    if (isNaN(keyInput*1) != true ) {
+        keyInput *= 1;
+    }
+
+    if (keyInput == "true") {
+        keyInput = true;
+    }   else if (keyInput == "false") {
+        keyInput = false;
+    }
+
+    if (isNaN(valueInput*1) != true ) {
+        valueInput *= 1;
+    }
+
+    if (valueInput == "true") {
+        valueInput = true;
+    }   else if (valueInput == "false") {
+        valueInput = false;
+    }
+
+    arrKeyValue.set (keyInput, valueInput);
+
+    document.getElementById('key_input').value = "";
+    document.getElementById('value_input').value = "";
+
+    return arrKeyValue;
+}
+
+
+function key_value_arr() {
+
+
+    let keyValueResult = document.getElementById("key_value_result");
+
+    arrKeyValue.forEach (function(key,value){
+
+        keyValueResult.innerHTML += `Ключ - ${key}, значение - ${value} <br>`;
+    })
+
+}
+
+function delete_key_value() {
+    arrKeyValue.clear()
+    return arrKeyValue;
+}
+
+//Task 10
+
+let numInput
+
+function simple_num_input() {
+
+    numInput = document.getElementById("num_input").value;
+    document.getElementById("num_input").value = "";
+    return numInput
+}
+
+
+function simple_num(numInput) {
+    let numResult = document.getElementById("num_result");
+    let numSimpleResult = document.getElementById("num_simple_result");
+
+    if (numInput > 1000 || numInput < 0) {
+        numResult.innerHTML = "Данные неверны, повторите ввод "
+        return
+    } else {
+        numResult.innerHTML = " " + numInput;
+    }
+
+
+    if (numInput == 0 || numInput == 1) {
+        numSimpleResult.innerHTML = "НЕТ"
+    }
+    let k;
+    let arr_k=[]
+    for (let i = 1; i <= numInput; i++ ) {
+        k = numInput % i;
+        if (k == 0) {
+            arr_k.push(k);
+        }
+    }
+
+    if (arr_k.length == 2) {
+        numSimpleResult.innerHTML = "ДА";
+    } else {
+        numSimpleResult.innerHTML = "НЕТ";
+    }
+
 }
